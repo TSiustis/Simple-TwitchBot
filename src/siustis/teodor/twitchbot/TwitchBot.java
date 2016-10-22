@@ -21,25 +21,21 @@ import static java.nio.charset.StandardCharsets.*;
 
 import org.jibble.pircbot.*;
 public class TwitchBot extends PircBot {
+	//blacklisted words
 	private static final Set<String> BLACKLIST = new HashSet<String>(Arrays.asList(
 		     new String[] {""}
 		));
 
 	
-
+       //variables for logging chat
 	File log = new File("log.txt");
 	Date date = new Date();
-
-
-	
-
-	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy h:mm:ss a");
 	SimpleDateFormat timeFormat = new SimpleDateFormat("H:mm");
 	String time = timeFormat.format(date);
 	String formattedDate = sdf.format(date);
 	
 	String channel,user;
-	int i = 0;
 	int idx = 0;
 	public TwitchBot(String botName,String channel){
 		this.setName(botName);
